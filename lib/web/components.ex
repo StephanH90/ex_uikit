@@ -37,4 +37,7 @@ defmodule ExUikit.Components do
   defdelegate container(assigns), to: ExUikit.Components.Container
   defdelegate button(assigns), to: ExUikit.Components.Button
   defdelegate button_group(assigns), to: ExUikit.Components.Button
+  defdelegate icon(assigns), to: ExUikit.Components.Icon
+  defdelegate modal(assigns), to: ExUikit.Components.Modal
+  defdelegate show_modal(selector), to: ExUikit.Components.Modal
 end

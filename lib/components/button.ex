@@ -7,7 +7,7 @@ defmodule ExUikit.Components.Button do
 
   def button(assigns) do
     ~H"""
-    <button class={["uk-button", "uk-button-#{@style}", @size, @rest[:class]]}>
+    <button class={[@rest[:class], "uk-button", "uk-button-#{@style}", @size]}>
       {render_slot(@inner_block)}
     </button>
     """
