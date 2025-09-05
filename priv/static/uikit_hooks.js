@@ -85,4 +85,38 @@ export const UIkitHooks = {
       this.dropdown?.hide();
     },
   },
+  UkDropnav: {
+    mounted() {
+      const options = {
+        align: this.el.dataset.align,
+        mode: this.el.dataset.mode,
+        'delay-show': parseInt(this.el.dataset.delayShow),
+        'delay-hide': parseInt(this.el.dataset.delayHide),
+        boundary: this.el.dataset.boundary,
+        target: this.el.dataset.target,
+        offset: parseInt(this.el.dataset.offset),
+        animation: this.el.dataset.animation,
+        duration: parseInt(this.el.dataset.duration),
+      };
+
+      if (this.el.dataset.dropbar === 'true' || this.el.dataset.dropbar === 'false') {
+        options.dropbar = this.el.dataset.dropbar === 'true';
+      }
+
+      if (this.el.dataset.dropbarAnchor) {
+        options['dropbar-anchor'] = this.el.dataset.dropbarAnchor;
+      }
+
+      if (this.el.dataset.stretch === 'true' || this.el.dataset.stretch === 'false') {
+        options.stretch = this.el.dataset.stretch === 'true';
+      } else if (this.el.dataset.stretch) {
+        options.stretch = this.el.dataset.stretch;
+      }
+
+      this.dropnav = UIkit.dropnav(this.el, options);
+    },
+    destroyed() {
+      this.dropnav?.$destroy();
+    },
+  },
 };
