@@ -45,8 +45,8 @@ export const UIkitHooks = {
         animation: this.el.dataset.animation,
         duration: parseInt(this.el.dataset.duration),
         offset: parseInt(this.el.dataset.offset),
-        'delay-show': parseInt(this.el.dataset.delayShow),
-        'delay-hide': parseInt(this.el.dataset.delayHide),
+        "delay-show": parseInt(this.el.dataset.delayShow),
+        "delay-hide": parseInt(this.el.dataset.delayHide),
       };
 
       if (this.el.dataset.boundary) {
@@ -57,26 +57,35 @@ export const UIkitHooks = {
         options.target = this.el.dataset.target;
       }
 
-      if (this.el.dataset.stretch === 'true' || this.el.dataset.stretch === 'false') {
-        options.stretch = this.el.dataset.stretch === 'true';
+      if (
+        this.el.dataset.stretch === "true" ||
+        this.el.dataset.stretch === "false"
+      ) {
+        options.stretch = this.el.dataset.stretch === "true";
       } else if (this.el.dataset.stretch) {
         options.stretch = this.el.dataset.stretch;
       }
 
-      if (this.el.dataset.large === 'true') {
-        this.el.classList.add('uk-dropdown-large');
+      if (this.el.dataset.large === "true") {
+        this.el.classList.add("uk-dropdown-large");
       }
 
-      if (this.el.dataset.flip === 'true' || this.el.dataset.flip === 'false') {
-        options.flip = this.el.dataset.flip === 'true';
+      if (this.el.dataset.flip === "true" || this.el.dataset.flip === "false") {
+        options.flip = this.el.dataset.flip === "true";
       }
 
-      if (this.el.dataset.shift === 'true' || this.el.dataset.shift === 'false') {
-        options.shift = this.el.dataset.shift === 'true';
+      if (
+        this.el.dataset.shift === "true" ||
+        this.el.dataset.shift === "false"
+      ) {
+        options.shift = this.el.dataset.shift === "true";
       }
 
-      if (this.el.dataset.autoUpdate === 'true' || this.el.dataset.autoUpdate === 'false') {
-        options['auto-update'] = this.el.dataset.autoUpdate === 'true';
+      if (
+        this.el.dataset.autoUpdate === "true" ||
+        this.el.dataset.autoUpdate === "false"
+      ) {
+        options["auto-update"] = this.el.dataset.autoUpdate === "true";
       }
 
       this.dropdown = UIkit.dropdown(this.el, options);
@@ -90,8 +99,8 @@ export const UIkitHooks = {
       const options = {
         align: this.el.dataset.align,
         mode: this.el.dataset.mode,
-        'delay-show': parseInt(this.el.dataset.delayShow),
-        'delay-hide': parseInt(this.el.dataset.delayHide),
+        "delay-show": parseInt(this.el.dataset.delayShow),
+        "delay-hide": parseInt(this.el.dataset.delayHide),
         boundary: this.el.dataset.boundary,
         target: this.el.dataset.target,
         offset: parseInt(this.el.dataset.offset),
@@ -99,16 +108,22 @@ export const UIkitHooks = {
         duration: parseInt(this.el.dataset.duration),
       };
 
-      if (this.el.dataset.dropbar === 'true' || this.el.dataset.dropbar === 'false') {
-        options.dropbar = this.el.dataset.dropbar === 'true';
+      if (
+        this.el.dataset.dropbar === "true" ||
+        this.el.dataset.dropbar === "false"
+      ) {
+        options.dropbar = this.el.dataset.dropbar === "true";
       }
 
       if (this.el.dataset.dropbarAnchor) {
-        options['dropbar-anchor'] = this.el.dataset.dropbarAnchor;
+        options["dropbar-anchor"] = this.el.dataset.dropbarAnchor;
       }
 
-      if (this.el.dataset.stretch === 'true' || this.el.dataset.stretch === 'false') {
-        options.stretch = this.el.dataset.stretch === 'true';
+      if (
+        this.el.dataset.stretch === "true" ||
+        this.el.dataset.stretch === "false"
+      ) {
+        options.stretch = this.el.dataset.stretch === "true";
       } else if (this.el.dataset.stretch) {
         options.stretch = this.el.dataset.stretch;
       }
@@ -117,6 +132,20 @@ export const UIkitHooks = {
     },
     destroyed() {
       this.dropnav?.$destroy();
+    },
+  },
+  UkAlert: {
+    mounted() {
+      const options = {
+        animation: this.el.dataset.animation !== "false",
+        duration: parseInt(this.el.dataset.duration) || 150,
+        "sel-close": this.el.dataset.selClose || ".uk-alert-close",
+      };
+
+      this.alert = UIkit.alert(this.el, options);
+    },
+    destroyed() {
+      this.alert?.close();
     },
   },
 };
