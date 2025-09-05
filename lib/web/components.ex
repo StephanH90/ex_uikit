@@ -4,6 +4,7 @@ defmodule ExUikit.Components do
   use Phoenix.Component
 
   defdelegate article(assigns), to: ExUikit.Components.Article
+  defdelegate badge(assigns), to: ExUikit.Components.Badge
 
   defdelegate grid(assigns), to: ExUikit.Components.Grid
   defdelegate card(assigns), to: ExUikit.Components.Card
