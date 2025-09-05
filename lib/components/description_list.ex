@@ -49,11 +49,14 @@ defmodule ExUikit.Components.DescriptionList do
 
   def description_list(assigns) do
     ~H"""
-    <dl class={[
-      "uk-description-list",
-      @divider && "uk-description-list-divider",
-      @rest[:class]
-    ]} {@rest}>
+    <dl
+      class={[
+        "uk-description-list",
+        @divider && "uk-description-list-divider",
+        @rest[:class]
+      ]}
+      {@rest}
+    >
       <.item :for={item <- @item} term={item.term}>
         {render_slot(item)}
       </.item>

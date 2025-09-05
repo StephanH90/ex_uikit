@@ -1,7 +1,7 @@
 defmodule ExUikit.Components.Badge do
   @moduledoc """
   Badge component for creating nice looking notification badges.
-  
+
   Based on UIKit's Badge component: https://getuikit.com/docs/badge
   """
 

@@ -48,11 +48,14 @@ defmodule ExUikit.Components.Comment do
 
   def comment(assigns) do
     ~H"""
-    <article class={[
-      "uk-comment",
-      @primary && "uk-comment-primary",
-      @rest[:class]
-    ]} role="comment">
+    <article
+      class={[
+        "uk-comment",
+        @primary && "uk-comment-primary",
+        @rest[:class]
+      ]}
+      role="comment"
+    >
       <.header :if={render_slot(@header)}>{render_slot(@header)}</.header>
       <.body :if={render_slot(@body)}>{render_slot(@body)}</.body>
     </article>
