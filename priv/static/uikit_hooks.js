@@ -37,4 +37,52 @@ export const UIkitHooks = {
       this.modal?.hide();
     },
   },
+  UkDropdown: {
+    mounted() {
+      const options = {
+        mode: this.el.dataset.mode,
+        pos: this.el.dataset.pos,
+        animation: this.el.dataset.animation,
+        duration: parseInt(this.el.dataset.duration),
+        offset: parseInt(this.el.dataset.offset),
+        'delay-show': parseInt(this.el.dataset.delayShow),
+        'delay-hide': parseInt(this.el.dataset.delayHide),
+      };
+
+      if (this.el.dataset.boundary) {
+        options.boundary = this.el.dataset.boundary;
+      }
+
+      if (this.el.dataset.target) {
+        options.target = this.el.dataset.target;
+      }
+
+      if (this.el.dataset.stretch === 'true' || this.el.dataset.stretch === 'false') {
+        options.stretch = this.el.dataset.stretch === 'true';
+      } else if (this.el.dataset.stretch) {
+        options.stretch = this.el.dataset.stretch;
+      }
+
+      if (this.el.dataset.large === 'true') {
+        this.el.classList.add('uk-dropdown-large');
+      }
+
+      if (this.el.dataset.flip === 'true' || this.el.dataset.flip === 'false') {
+        options.flip = this.el.dataset.flip === 'true';
+      }
+
+      if (this.el.dataset.shift === 'true' || this.el.dataset.shift === 'false') {
+        options.shift = this.el.dataset.shift === 'true';
+      }
+
+      if (this.el.dataset.autoUpdate === 'true' || this.el.dataset.autoUpdate === 'false') {
+        options['auto-update'] = this.el.dataset.autoUpdate === 'true';
+      }
+
+      this.dropdown = UIkit.dropdown(this.el, options);
+    },
+    destroyed() {
+      this.dropdown?.hide();
+    },
+  },
 };
