@@ -17,6 +17,8 @@
 - `mix dialyzer` - Run type checking
 - `mix dialyzer --format short` - Run type checking with concise output
 
+- do not add empty tests
+
 ## Code Style Guidelines
 
 ### Formatting
