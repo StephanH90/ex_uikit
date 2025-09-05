@@ -1,4 +1,10 @@
 defmodule ExUikit.Components.Button do
+  @moduledoc """
+  Button component for creating various styles of buttons.
+
+  Based on UIKit's Button component: https://getuikit.com/docs/button
+  """
+
   use Phoenix.Component
 
   attr :style, :string, values: ~w(default primary secondary danger text link), default: "default"

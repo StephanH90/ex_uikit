@@ -1,4 +1,10 @@
 defmodule ExUikit.Components.Modal do
+  @moduledoc """
+  Modal component for creating dialog boxes and popups.
+
+  Based on UIKit's Modal component: https://getuikit.com/docs/modal
+  """
+
   use Phoenix.Component
 
   attr :id, :string, required: true, doc: "ID of the modal"

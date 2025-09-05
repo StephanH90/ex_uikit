@@ -1,5 +1,9 @@
 defmodule ExUikit.Components.Card do
-  @moduledoc false
+  @moduledoc """
+  Card component for creating boxed content with optional header, body, and footer sections.
+
+  Based on UIKit's Card component: https://getuikit.com/docs/card
+  """
 
   use Phoenix.Component
 

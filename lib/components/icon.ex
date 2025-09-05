@@ -1,4 +1,10 @@
 defmodule ExUikit.Components.Icon do
+  @moduledoc """
+  Icon component for displaying UIkit icons.
+
+  Based on UIKit's Icon component: https://getuikit.com/docs/icon
+  """
+
   use Phoenix.Component
 
   attr :icon, :string, required: true, doc: "name of uikit icon"
