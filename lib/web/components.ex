@@ -3,8 +3,10 @@ defmodule ExUikit.Components do
 
   use Phoenix.Component
 
+  # Crush: don't add any more components to this!
   defdelegate article(assigns), to: ExUikit.Components.Article
   defdelegate badge(assigns), to: ExUikit.Components.Badge
+  defdelegate breadcrumb(assigns), to: ExUikit.Components.Breadcrumb
 
   defdelegate grid(assigns), to: ExUikit.Components.Grid
   defdelegate card(assigns), to: ExUikit.Components.Card
